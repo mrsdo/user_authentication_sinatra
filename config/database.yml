@@ -1,0 +1,12 @@
+default: &default
+  adapter: mysql2
+  # For details on connection pooling, see rails configuration guide
+  # http://guides.rubyonrails.org/configuring.html#database-pooling
+  pool: 5
+  username: root
+  password: palo5non!
+
+development:
+  <<: *default
+  database: bolderer_sinatra_app_development
+

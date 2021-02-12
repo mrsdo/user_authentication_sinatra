@@ -1,0 +1,69 @@
+<!-- Form to update specific problem -->
+<!-- POSTs to a controller action patch '/problems/:id' -->
+
+<h1> Edit a Problem</h1>
+
+<!-- Print error message -->
+<% if !!@error %>
+  <div class="alert">
+    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+    <strong>Error!</strong> <%= @error %>
+  </div>
+<% end %>
+
+<form action="/problems/<%= @problem.id %>" method="POST">
+  <!--post gets translated to a patch request-->
+  <!-- modifies an existing problem based on ID in the url -->
+  <input id="hidden" type="hidden" name="_method" value="patch">
+
+  <h3>Original Problem — Problem id: <%=@problem.id%></h3>
+  <h4>Date: <%= @problem.date %></h3>
+  <ul>
+    <li>Color: <%= @problem.color %></li>
+    <li>Grade: <%= @problem.grade %></li>
+    <li>Image: <br><%= @problem.image %> </li>
+    <!-- helper method to display style in sentence -->
+    <li>Styles: <%= @problem.styles_pretty %></li>
+  </ul><hr>
+
+
+  <h3> Edit Problem</h3><br>
+
+  <!-- Date -->
+  <label>Date: </label>
+  <input type="date" name="problem[date]" value="<%= @problem.date %>"><br><br>
+
+  <!-- Problem Color -->
+  <!-- dynamically generating radio-buttons -->
+  <label>Color: </label>
+  <% @colors.each do |color| %>
+    <input type="radio" name="problem[color]" value="<%= color %>" <%= 'checked' if @problem.color == color %>> <%= color %></input>
+  <% end %><br><br>
+
+  <!-- Problem Grade -->
+  <label>Problem Grade: </label>
+  <select name="problem[grade]" required>
+    <option value="">Choose a V-grade</option>
+    <% @grades.each do |grade| %>
+      <option value="<%= grade %>" <%= 'selected' if @problem.grade == grade %>><%= grade %></option>
+    <% end %>
+  </select><br>
+
+  <!-- Problem Style -->
+  <h5>Select the problem style(s):</h5>
+  <!-- iterate through styles -->
+  <% @styles.each do |style| %>
+    <input type="checkbox" name="problem[style_ids][]"  value="<%= style.id %>" <%='checked' if @problem.styles_pretty.include?(style.name) %>>
+      <%= style.name %>
+    </input>
+    <br>
+  <% end %><br>
+
+  <!-- Problem Image URL-->
+  <label>Image URL:</label>
+  <input type="text" name="problem[image]" value='<%= @problem.image.to_str %>'>
+  <br><br>
+
+  <!-- Submit button -->
+  <button class="btn btn-lg btn-info" type="submit">Edit Problem</button><br>
+</form>
