@@ -1,0 +1,19 @@
+[ N 2021-02-13 14:34:47.7480 88648/T1 age/Wat/WatchdogMain.cpp:1373 ]: Starting Passenger watchdog...
+[ N 2021-02-13 14:34:47.8143 88650/T1 age/Cor/CoreMain.cpp:1340 ]: Starting Passenger core...
+[ N 2021-02-13 14:34:47.8159 88650/T1 age/Cor/CoreMain.cpp:256 ]: Passenger core running in multi-application mode.
+[ N 2021-02-13 14:34:47.8693 88650/T1 age/Cor/CoreMain.cpp:1015 ]: Passenger core online, PID 88650
+[ N 2021-02-13 14:34:50.6996 88650/T5 age/Cor/SecurityUpdateChecker.h:519 ]: Security update check: no update found (next check in 24 hours)
+
+[ N 2021-02-13 14:37:09.9533 88650/T8 age/Cor/CoreMain.cpp:671 ]: Signal received. Gracefully shutting down... (send signal 2 more time(s) to force shutdown)
+[ N 2021-02-13 14:37:09.9534 88650/T1 age/Cor/CoreMain.cpp:1246 ]: Received command to shutdown gracefully. Waiting until all clients have disconnected...
+[ N 2021-02-13 14:37:09.9550 88650/Te Ser/Server.h:901 ]: [ServerThr.4] Freed 0 spare client objects
+[ N 2021-02-13 14:37:09.9547 88650/Ta Ser/Server.h:901 ]: [ServerThr.2] Freed 0 spare client objects
+[ N 2021-02-13 14:37:09.9555 88650/Ta Ser/Server.h:558 ]: [ServerThr.2] Shutdown finished
+[ N 2021-02-13 14:37:09.9554 88650/Te Ser/Server.h:558 ]: [ServerThr.4] Shutdown finished
+[ N 2021-02-13 14:37:09.9549 88650/T8 Ser/Server.h:901 ]: [ServerThr.1] Freed 0 spare client objects
+[ N 2021-02-13 14:37:09.9558 88650/T8 Ser/Server.h:558 ]: [ServerThr.1] Shutdown finished
+[ N 2021-02-13 14:37:09.9549 88650/Tc Ser/Server.h:901 ]: [ServerThr.3] Freed 0 spare client objects
+[ N 2021-02-13 14:37:09.9559 88650/Tc Ser/Server.h:558 ]: [ServerThr.3] Shutdown finished
+[ N 2021-02-13 14:37:09.9561 88650/Tg Ser/Server.h:901 ]: [ApiServer] Freed 0 spare client objects
+[ N 2021-02-13 14:37:09.9562 88650/Tg Ser/Server.h:558 ]: [ApiServer] Shutdown finished
+[ N 2021-02-13 14:37:10.7819 88650/T1 age/Cor/CoreMain.cpp:1325 ]: Passenger core shutdown finished

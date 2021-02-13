@@ -9,7 +9,6 @@ require './config/environment'
 # Allows us to use PATH PUT DELETE requests
 use Rack::MethodOverride
 # Mount subsequent controllers
-use ProblemsController
 use SessionsController
 use UsersController
 # Run parent controller to start an instance of our app
