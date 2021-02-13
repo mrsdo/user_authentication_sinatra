@@ -45,12 +45,13 @@
   <!-- Hero Section -->
   <section class="hero" id="hero"></section>
   <section>
-    <div STYLE="height: 30px;background-color: #d85751; color: #ffffff; padding: 10px 5px 5px 5px;">
+    <div style="height: 30px;background-color: #d85751; color: #ffffff; padding: 10px 5px 5px 5px;">
       <div style="float: left;">PLEASE NOTE:  This is a development site, not all features may work as expected.</div>
       <div style="float: right;margin-top: -15px;padding-right: 45px;"><% if logged_in? %>
         <h3>Welcome back, <%= current_user.fname %>!</h3>
 
       <% else %>
+          <div style="float: right;margin-top:-10px;"><a class="nav-link" href="/signup"><input type="submit" value="signup" class="button"></a></div>
 
         <% end %>
       </div>
