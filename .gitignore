@@ -15,3 +15,4 @@ Rakefile
 README.md
 spec
 spec.md
+*.iml
