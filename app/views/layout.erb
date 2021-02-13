@@ -27,23 +27,33 @@
   <!-- Navigation -->
   <header>
     <h4 class="logo">The R. Dolce Group</h4>
-
     <nav>
       <ul>
         <li><a href="/">HOME</a></li>
-        <li><a href="/logins">LOGIN</a></li>
-        <li><a href="/listings">LISTINGS</a></li>
-        <li><a href="/agents">AGENTS</a></li>
-        <li><a href="/companies">COMPANIES</a></li>
+        <% if logged_in? %>
+          <li><a href="/users/dashboard">My Dashboard</a></li>
+          <li><a href="/listings">My listings</a></li>
+        <% else %>
+          <li><a href="/login">LOGIN</a></li>
+          <li><a href="/listings">LISTINGS</a></li>
+          <li><a href="/agents">AGENTS</a></li>
+          <li><a href="/companies">COMPANIES</a></li>
+        <% end %>
       </ul>
+
     </nav>
   </header>
   <!-- Hero Section -->
   <section class="hero" id="hero">
     <h2 class="hero_header">&nbsp;</h2>
+
+  </section>
+  <section style="padding: 45px 55px;">
+    <br> <br>
     <% if logged_in? %>
+      <h3> Welcome back, <%= current_user.fname %></h3>
       <li class="nav-item">
-        <a class="nav-link" href="/problems">All problems</a>
+        <a class="nav-link" href="/users/dashboard">All problems</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="/users/<%= current_user.id %>">Your Problems</a>
@@ -56,9 +66,6 @@
         <a class="nav-link" href="/">Sign up/ Log in</a>
       </li>
     <% end %>
-  </section>
-  <section style="padding: 45px 55px;">
-    <br> <br>
   <!-- Start Dynamic content -->
 
     <%= yield %>
