@@ -1,54 +1,48 @@
-# Bolderer Sinatra App
-This Sinatra-based app is designed by jacqueline-lam, as a porfolio project for the Flatiron School Software Engineering cirriculum.
+# Sinatra CMS Application Assessment
+View on Wiki</a> (https://github.com/mrsdo/sinatra-cms-app-assessment/wiki)
 
-The app provides aspiring boulderers with the opprounity to keep track of their problems that they have climbed and cheer on others' climbing progress as well!
+****
 
+-[x] Add Project Bundler, File Structure and Theme
 
-## Installation
+        -- public, roles controller test
 
-Download zip from my project repository: https://github.com/jacqueline-lam/bolderer_sinatra_app
+-[x] Add Project MVC (Sessions & Users)
 
-Go to your terminal and change directory:
+        -- user mvc (login)
 
-    $ cd bolderer_sinatra_app
+-[x] Add Database Migrations & Seeds
 
-If you don't have Ruby, please install Ruby version `ruby 2.6.5p114 (2019-10-01 revision 67812) [x86_64-darwin18]
-`.
+       -- rake db:create
 
-And then run:
+       -- rake db:create_migration create_users
 
-    $ gem install bundler
+       -- rake db:migrate
 
+       -- rake db:seed(db/seeded/create_user)
 
-Bundler gem provides us access to a terminal command: bundle install
-
-Install the gems and gem dependencies for this app by running:
-
-    $ bundle install
-
-And then run:
-
-    $ rake db:seed
-
-And then run:
-
-    $ shotgun
-
-Lastly, go to http://localhost:9393 or the IP Address:PORT provided.
+-[x] git push to Live http://[server_path]:3000
 
 
-## Contributing
+      mrsdo@ps630616 ~/[server_path]/public
+      % which passenger config
+      /[server_path]/.rvm/gems/ruby-2.7.2/bin/passenger
+      config not found
+      mrsdo@ps630616 ~/[server_path]/public
+      % rvm use 2.7.2
+      Using /[server_path]/.rvm/gems/ruby-2.7.2
+      
+      mrsdo@ps630616 ~/[server_path]/public
+      % /[server_path]/.rvm/gems/ruby-2.7.2/bin/passenger-config --ruby-command
+      passenger-config was invoked through the following Ruby interpreter:
+      Command: /[server_path]/.rvm/wrappers/ruby-2.7.2/ruby
+      Version: ruby 2.7.2p137 (2020-10-01 revision 5445e04352) [x86_64-linux]
+      To use in Apache: PassengerRuby /[server_path]/.rvm/wrappers/ruby-2.7.2/ruby
+      To use in Nginx : passenger_ruby /[server_path]/.rvm/wrappers/ruby-2.7.2/ruby
+      To use with Standalone: /[server_path]/.rvm/wrappers/ruby-2.7.2/ruby /[server_path]/[server_path]/public/vendor/bundle/ruby/2.7.0/gems/passenger-6.0.7/bin/passenger start
+      
+      Simple Start
+      % bundle exec passenger start --address 127.0.0.1 --port 80
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/jacqueline-lam/bolderer_sinatra_app. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
-## Authors
-Jacqueline Lam - @jacqueline-lam
-
-## License
-
-The code is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
-
-## Code of Conduct
-
-Everyone interacting in the project’s codebases is expected to follow the [code of conduct](https://github.com/jacqueline-lam/bolderer_sinatra_app/blob/master/CODE_OF_CONDUCT.md).
 
