@@ -4,9 +4,9 @@ default: &default
   # http://guides.rubyonrails.org/configuring.html#database-pooling
   pool: 5
   username: root
-  password: palo5non!
+  password: Palo5non!
 
 development:
   <<: *default
-  database: bolderer_sinatra_app_development
+  database: user_authentication_sinatra
 
