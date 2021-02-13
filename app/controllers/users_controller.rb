@@ -21,14 +21,14 @@ class UsersController < ApplicationController
     else
       user.save
       session[:user_id] = user.id
-      redirect '/problems'
+      redirect '/'
     end
   end
 
   get '/users/:id' do
     redirect '/' if !logged_in?
     @user = User.find_by(id: params[:id])
-    @problems = @user.problems.order('date desc')
-    erb :"/users/show"
+    # @problems = @user.problems.order('date desc')
+    erb :"/users/dashboard"
   end
 end
