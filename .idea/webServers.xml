@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="71f9936f-6c01-4435-8cf7-ece4e6578732" name="Sinatra Demo" url="http://fis.shegottablog.com:3000">
+        <fileTransfer rootFolder="/home/mrsdo" accessType="SFTP" host="ps630616.dreamhostps.com" port="22" sshConfigId="8f561108-5443-4ea5-958e-6a78d3d09a66" sshConfig="mrsdo@ps630616.dreamhostps.com:22">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+    <groups>
+      <group>
+        <name>fis@shegottablog.com</name>
+        <servers>
+          <name value="Sinatra Demo" />
+        </servers>
+      </group>
+    </groups>
+  </component>
+</project>
