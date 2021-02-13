@@ -116,9 +116,9 @@ ul li:hover a {
 }
 
 /* Yield Section */
-.page {
-    background-color: #cccccc;
-    margin: 65px 35px;
+.content {
+    padding: 35px;
+
 }
 
 

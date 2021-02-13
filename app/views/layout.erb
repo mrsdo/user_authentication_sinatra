@@ -1,18 +1,16 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>
-<html class="no-js ie6 oldie" lang="en"> <![endif]-->
-<!--[if IE 7]>
-<html class="no-js ie7 oldie" lang="en"> <![endif]-->
-<!--[if IE 8]>
-<html class="no-js ie8 oldie" lang="en"> <![endif]-->
-<!--[if gt IE 8]><!-->
-<html class="no-js" lang="en"> <!--<![endif]-->
-<html lang="en-US">
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+
   <title>Listing Manager</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
   <!--The following script tag downloads a font from the Adobe Edge Web Fonts server for use within the web page. We recommend that you do not modify it.-->
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -22,7 +20,7 @@
   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   <![endif]-->
 </head>
-<body style="height:1000px;">
+<body>
 <div class="container">
   <!-- Navigation -->
   <header>
@@ -31,8 +29,8 @@
       <ul>
         <li><a href="/">HOME</a></li>
         <% if logged_in? %>
-          <li><a href="/users/dashboard">My Dashboard</a></li>
-          <li><a href="/listings">My listings</a></li>
+          <li><a href="/users/dashboard">VIEW PROFILE</a></li>
+          <li><a href="/listings">MY LISTINGS</a></li>
         <% else %>
           <li><a href="/login">LOGIN</a></li>
           <li><a href="/listings">LISTINGS</a></li>
@@ -44,47 +42,31 @@
     </nav>
   </header>
   <!-- Hero Section -->
-  <section class="hero" id="hero">
-    <h2 class="hero_header">&nbsp;</h2>
-
-  </section>
-  <section style="padding: 45px 55px;">
-    <br> <br>
-    <% if logged_in? %>
-      <h3> Welcome back, <%= current_user.fname %></h3>
-      <li class="nav-item">
-        <a class="nav-link" href="/users/dashboard">All problems</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/users/<%= current_user.id %>">Your Problems</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/logout">Log Out</a>
-      </li>
-    <% else %>
-      <li class="nav-item">
-        <a class="nav-link" href="/">Sign up/ Log in</a>
-      </li>
-    <% end %>
-  <!-- Start Dynamic content -->
-
-    <%= yield %>
-  <!-- End Dynamic content -->
-    <br> <br>
+  <section class="hero" id="hero"></section>
+  <section>
+    <div STYLE="background-color: #d85751; color: #ffffff; padding:5px 5px 5px 5px;">PLEASE NOTE:  This is a development site, not all features may work as expected.</div>
+    <br/>
+    <br/>
+    <!-- Start Dynamic content -->
+    <div style="margin: 25px;">
+      <%= yield %>
+      <!-- End Dynamic content -->
+    </div>
   </section>
 
-  <section class="banner">
-    <h2 class="parallax">345 Carl Street Apt 12, Carrol Rd. Fort Myers, FL 33913</h2>
-    <p class="parallax_description">Phone:: +1 239 555 1234 | Email: marti@rdolcegroup.com</p>
-  </section>
-  <section class="footer_banner" id="contact">
-    <h2 class="hidden">Footer Banner Section </h2>
-    <p class="hero_header">REGISTER YOUR PROPERTIES TODAY!</p>
-    <div class="button"><a href="/signups">subscribe</a></div>
-  </section>
-  <!-- Copyrights Section -->
-  <div class="copyright">&copy;2021- <strong>ERG, All Rights Reserved. marti@rdolcegroup.com | +1 239 555 1234</strong>
-  </div>
+<section class="banner">
+  <h2 class="parallax">345 Carl Street Apt 12, Carrol Rd. Fort Myers, FL 33913</h2>
+  <p class="parallax_description">Phone:: +1 239 555 1234 | Email: marti@rdolcegroup.com</p>
+</section>
+<section class="footer_banner" id="contact">
+  <h2 class="hidden">Footer Banner Section </h2>
+  <p class="hero_header">REGISTER YOUR PROPERTIES TODAY!</p>
+  <div class="button"><a href="/signups">subscribe</a></div>
+</section>
+<!-- Copyrights Section -->
+<div class="copyright">&copy;2021- <strong>ERG, All Rights Reserved. marti@rdolcegroup.com | +1 239 555 1234</strong>
+</div>
 </div>
 </body>
 </html>
+
