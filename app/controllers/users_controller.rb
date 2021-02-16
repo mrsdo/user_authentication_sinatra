@@ -8,21 +8,28 @@ class UsersController < ApplicationController
   end
 
   post '/signup' do
-    user = User.new()
-
-    # Won't be saved to db unless user filled out password
-    if !user.username || !user.password
-      @error = "Please enter a username and password!"
-      erb :'/users/new'
-    # Check if there is an existing username
-    elsif User.find_by(username: user.username)
-      @error = "This username already exists. Please create a new username."
-      erb :'/users/new'
-    else
-      user.save
+    user = User.new(params[:user])
+    if user.save
       session[:user_id] = user.id
-      redirect '/'
+      redirect "/users/dashboard"
+    else
+      redirect "/users/new"
     end
+    # user = User.new()
+    #
+    # # Won't be saved to db unless user filled out password
+    # if !user.username || !user.password
+    #   @error = "Please enter a username and password!"
+    #   erb :'/users/new'
+    #   # Check if there is an existing username
+    # elsif User.find_by(username: user.username)
+    #   @error = "This username already exists. Please create a new username."
+    #   erb :'/users/new'
+    # else
+    #   user.save
+    #   session[:user_id] = user.id
+    #   redirect '/dashboard'
+    # end
   end
 
   get '/users/:id' do
