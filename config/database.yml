@@ -4,7 +4,7 @@ default: &default
   # http://guides.rubyonrails.org/configuring.html#database-pooling
   pool: 5
   username: root
-  password: Palo5non!
+  password: xxxxxxxx
 
 development:
   <<: *default
